@@ -1,8 +1,8 @@
 terraform {
   backend "s3" {
-    bucket  = var.remote_bucket_name
+    bucket  = "hunglh-terraform-remote-state-20240711"
     key     = "global/terraform.tfstate"
-    region  = var.region
+    region  = "ap-southeast-1"
     encrypt = true
   }
 }
