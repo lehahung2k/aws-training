@@ -19,6 +19,12 @@ resource "aws_route_table" "ec2_rt" {
   }
 }
 
+resource "aws_route" "internet_gateway" {
+  route_table_id         = aws_route_table.ec2_rt.id
+  destination_cidr_block = "0.0.0.0/0"
+  gateway_id             = var.internet_gateway_id
+}
+
 # Route table association for EC2 instances
 resource "aws_route_table_association" "ec2_rta" {
   subnet_id      = aws_subnet.ec2_subnet.id

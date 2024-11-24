@@ -37,3 +37,8 @@ variable "availability_zone" {
   description = "The availability zone for the EC2 instances"
   type = string
 }
+
+variable "internet_gateway_id" {
+  description = "The ID of the internet gateway"
+  type = string
+}
