@@ -21,3 +21,15 @@ variable "remote_bucket_name" {
 variable "vpc_cidr_block" {
   type = string
 }
+
+variable "private_cidr_blocks" {
+  type = list(string)
+}
+
+variable "public_cidr_blocks" {
+  type = list(string)
+}
+
+variable "azs" {
+  type = list(string)
+}

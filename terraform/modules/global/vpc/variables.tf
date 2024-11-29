@@ -13,3 +13,18 @@ variable "tags" {
   type = map(string)
   default = {}
 }
+
+variable "azs" {
+  description = "A list of availability zones"
+  type = list(string)
+}
+
+variable "private_cidr_blocks" {
+  description = "A list of CIDR blocks for the private subnets"
+  type = list(string)
+}
+
+variable "public_cidr_blocks" {
+  description = "The CIDR blocks for the public subnet"
+  type = list(string)
+}

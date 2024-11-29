@@ -14,7 +14,7 @@ resource "aws_subnet" "ec2_subnet" {
 resource "aws_route_table" "ec2_rt" {
   vpc_id = var.vpc_id
 
-  route = {
+  route {
     cidr_block = "0.0.0.0/0"
     gateway_id = var.internet_gateway_id
   }
