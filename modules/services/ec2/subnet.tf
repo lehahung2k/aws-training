@@ -14,15 +14,14 @@ resource "aws_subnet" "ec2_subnet" {
 resource "aws_route_table" "ec2_rt" {
   vpc_id = var.vpc_id
 
+  route = {
+    cidr_block = "0.0.0.0/0"
+    gateway_id = var.internet_gateway_id
+  }
+
   tags = {
     Name = "${var.project_name}-${var.environment}-ec2-rtb"
   }
-}
-
-resource "aws_route" "internet_gateway" {
-  route_table_id         = aws_route_table.ec2_rt.id
-  destination_cidr_block = "0.0.0.0/0"
-  gateway_id             = var.internet_gateway_id
 }
 
 # Route table association for EC2 instances
