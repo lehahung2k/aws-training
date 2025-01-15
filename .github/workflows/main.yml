@@ -45,7 +45,7 @@ jobs:
       - name: Configure SSH
         run: |
           mkdir -p ~/.ssh
-          echo "Host server_test" >> ~/.ssh/config
+          echo "Host my-server.ubuntu" >> ~/.ssh/config
           echo "    HostName ${{ secrets.SERVER_HOST }}" >> ~/.ssh/config
           echo "    User ${{ secrets.SSH_USER }}" >> ~/.ssh/config
           echo "    IdentityFile ~/.ssh/deploy_key" >> ~/.ssh/config
@@ -54,7 +54,7 @@ jobs:
           chmod 600 ~/.ssh/config
 
       - name: Test SSH connection
-        run: ssh server_test "echo Connection successful"
+        run: ssh my-server.ubuntu "echo Connection successful"
 
       - name: Set up Python
         uses: actions/setup-python@v2
@@ -88,7 +88,7 @@ jobs:
       - name: Configure SSH
         run: |
           mkdir -p ~/.ssh
-          echo "Host server_test" >> ~/.ssh/config
+          echo "Host semy-server.ubunturver_test" >> ~/.ssh/config
           echo "    HostName ${{ secrets.SERVER_HOST }}" >> ~/.ssh/config
           echo "    User ${{ secrets.SSH_USER }}" >> ~/.ssh/config
           echo "    IdentityFile ~/.ssh/deploy_key" >> ~/.ssh/config
@@ -96,7 +96,7 @@ jobs:
           chmod 600 ~/.ssh/config
 
       - name: Test SSH connection
-        run: ssh server_test "echo Connection successful"
+        run: ssh my-server.ubuntu "echo Connection successful"
 
       - name: Set up Python
         uses: actions/setup-python@v2
