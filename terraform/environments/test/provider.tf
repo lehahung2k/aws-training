@@ -5,6 +5,12 @@ terraform {
       version = "~> 5.0"
     }
   }
+  backend "s3" {
+    bucket  = "hunglh-terraform-remote-state-20240711"
+    key     = "environment/test/terraform.tfstate"
+    region  = "ap-southeast-1"
+    encrypt = true
+  }
 }
 
 provider "aws" {
