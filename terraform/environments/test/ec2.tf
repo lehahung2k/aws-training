@@ -12,4 +12,13 @@ module "server_test" {
   allowed_ssh_ips         = var.allowed_ssh_ips
   allowed_access_ips      = var.allowed_access_ips
   allowed_security_groups = var.allowed_security_groups
+
+  # EC2
+  ami_id           = var.ami_id
+  instance_type    = var.instance_type
+  key_name         = var.key_name
+  root_volume_size = var.root_volume_size
+  root_volume_type = var.root_volume_type
+
+  associate_public_ip_address = true
 }

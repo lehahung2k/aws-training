@@ -18,6 +18,7 @@ provider "aws" {
   default_tags {
     tags = {
       Owner = var.owner
+      Environment = var.environment
     }
   }
 }
