@@ -36,3 +36,5 @@ terraform.rc
 # Ignore MacOS system files and vscode files
 .DS_Store
 .vscode
+
+*.pem
