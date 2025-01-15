@@ -67,7 +67,7 @@ jobs:
           pip install ansible
 
       - name: Run Ansible Playbook in check mode
-        run: ansible-playbook -i ansible/environments/dev ansible/test.yml --check --diff 
+        run: ansible-playbook -i ansible/environments/test ansible/test.yml --check --diff 
         env:
           ANSIBLE_HOST_KEY_CHECKING: 'False'
 
@@ -109,6 +109,6 @@ jobs:
           pip install ansible
 
       - name: Run Ansible Playbook
-        run: ansible-playbook ansible/test.yml -i ansible/environments/dev
+        run: ansible-playbook ansible/test.yml -i ansible/environments/test
         env:
           ANSIBLE_HOST_KEY_CHECKING: 'False'
