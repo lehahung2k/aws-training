@@ -50,6 +50,7 @@ jobs:
           echo "    User ${{ secrets.SSH_USER }}" >> ~/.ssh/config
           echo "    IdentityFile ~/.ssh/deploy_key" >> ~/.ssh/config
           echo "    StrictHostKeyChecking no" >> ~/.ssh/config
+          echo "    AddKeysToAgent yes" >> ~/.ssh/config
           chmod 600 ~/.ssh/config
 
       - name: Test SSH connection
@@ -66,7 +67,7 @@ jobs:
           pip install ansible
 
       - name: Run Ansible Playbook in check mode
-        run: ansible-playbook -i ansible/environments/dev/dev ansible/test.yml --check --diff 
+        run: ansible-playbook -i ansible/environments/dev ansible/test.yml --check --diff 
         env:
           ANSIBLE_HOST_KEY_CHECKING: 'False'
 
@@ -108,6 +109,6 @@ jobs:
           pip install ansible
 
       - name: Run Ansible Playbook
-        run: ansible-playbook ansible/test.yml -i ansible/environments/dev/dev
+        run: ansible-playbook ansible/test.yml -i ansible/environments/dev
         env:
           ANSIBLE_HOST_KEY_CHECKING: 'False'
