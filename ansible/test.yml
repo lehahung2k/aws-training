@@ -1,2 +1,3 @@
-hosts: server_test
-become: true
+---
+- hosts: server_test
+  become: true
